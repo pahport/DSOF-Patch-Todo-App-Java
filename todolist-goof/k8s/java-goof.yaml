@@ -20,6 +20,9 @@ spec:
       - image: ${DOCKER_ACCOUNT}/java-goof:latest
         imagePullPolicy: Always
         name: java-goof
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
       restartPolicy: Always
 ---
 apiVersion: v1
